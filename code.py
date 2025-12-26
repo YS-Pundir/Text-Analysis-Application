@@ -28,6 +28,3 @@ class text_analysis:
                 print("file not found")
         print(self.text)
 
-
-c1=text_analysis()
-c1.text_input()
