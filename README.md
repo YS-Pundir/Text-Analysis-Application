@@ -51,7 +51,7 @@ Installation
 Clone the repository:
 
 bash
-git clone https://github.com/your-username/text-analysis-app.git
+git clone (https://github.com/YS-Pundir/Text-Analysis-Application.git)
 cd text-analysis-app
 Run the program:
 
