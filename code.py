@@ -59,6 +59,17 @@ class text_analysis:
         print("Total words: ",self.statistical_data["word count"])
         print("Total Sentences : ",self.statistical_data["Sentence count "])
         print("Total paragraphs :",self.statistical_data["Paragraph count "])
+
+class Frequency_analysis(text_analysis):
+    def __init__(self):
+        self.__init__(super,self.text,self.statistical_data)
+    
+    def cleanword(self):
+        word=self.text.strip(".,!@#$%^&*()<>:").split(" ")
+        for i in word:
+            i.lower
+
+
     
 
 c1=text_analysis()
