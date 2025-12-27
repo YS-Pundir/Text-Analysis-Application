@@ -57,6 +57,12 @@ class text_analysis:
 class Frequency_analysis(text_analysis):
     def __init__(self):
         super().__init__()
+
+    def Frequency_analysis(self):
+        #converting text in lower case
+        self.text=self.text.lower()
+
+        
         
 
 
