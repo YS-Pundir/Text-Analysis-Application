@@ -71,7 +71,7 @@ class Frequency_analysis(text_analysis):
         self.text=self.text.lower()
         
         #Removing the punctuation
-        punctuation="!@#$%^&*(){}[]:;""<>,.?/\|"
+        punctuation="!@#$%^&*(){}[]:;""<>,.?/|"
         cleaned_text=""
             
         for char in self.text:
