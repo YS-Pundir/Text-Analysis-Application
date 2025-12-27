@@ -61,6 +61,18 @@ class Frequency_analysis(text_analysis):
     def Frequency_analysis(self):
         #converting text in lower case
         self.text=self.text.lower()
+        
+        #Removing the punctuation
+        punctuation="!@#$%^&*(){}[]:;""<>,.?/\|"
+        cleaned_text=""
+
+        for char in self.text:
+            if char not in punctuation:
+                cleaned_text+=char
+        
+        print(cleaned_text)
+
+
 
         
         
@@ -77,6 +89,7 @@ class Frequency_analysis(text_analysis):
 c1=Frequency_analysis()
 c1.text_input()
 c1.statistics()
+c1.Frequency_analysis()
 c1.display()
 
 
