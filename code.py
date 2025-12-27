@@ -30,6 +30,11 @@ class text_analysis:
             except :
                 print("file not found")
         
+        else:
+            print("Invalid Choice!!")
+            print("PLease Choose the choice again")
+            self.text_input()
+        
 
     def statistics(self):
         #Adding the character with space to the data
