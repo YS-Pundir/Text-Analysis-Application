@@ -3,6 +3,7 @@ class text_analysis:
     def __init__(self):
         self.text=""
         self.statistical_data={}
+        self.word_count={}
 
     def text_input(self):
         print("-"*15,"Text analysis Application","*"*15)
@@ -65,18 +66,21 @@ class Frequency_analysis(text_analysis):
         #Removing the punctuation
         punctuation="!@#$%^&*(){}[]:;""<>,.?/\|"
         cleaned_text=""
-
+            
         for char in self.text:
+            #checking if there is punctuaation is the given text
             if char not in punctuation:
                 cleaned_text+=char
         
-        print(cleaned_text)
-
-
-
-        
+        #highest used words in text
+        words=self.text.split()
         
 
+        for word in words:
+            if  word in self.word_count:
+                self.word_count[word]+=1
+            else:
+                self.word_count[word]=1
 
     def display(self):
         print("Total characters : ",self.statistical_data["char_with"])
