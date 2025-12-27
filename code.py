@@ -53,29 +53,30 @@ class text_analysis:
                 list2.append(i)
         self.statistical_data["Sentence count "]=len(list2)
 
+
+class Frequency_analysis(text_analysis):
+    def __init__(self):
+        super().__init__()
+        
+
+
     def display(self):
         print("Total characters : ",self.statistical_data["char_with"])
         print("Total characters (excluding spaces): ",self.statistical_data["char_without"])
         print("Total words: ",self.statistical_data["word count"])
         print("Total Sentences : ",self.statistical_data["Sentence count "])
         print("Total paragraphs :",self.statistical_data["Paragraph count "])
-
-class Frequency_analysis(text_analysis):
-    def __init__(self):
-        self.__init__(super,self.text,self.statistical_data)
     
-    def cleanword(self):
-        word=self.text.strip(".,!@#$%^&*()<>:").split(" ")
-        for i in word:
-            i.lower
-
-
-    
-
-c1=text_analysis()
+ 
+c1=Frequency_analysis()
 c1.text_input()
 c1.statistics()
 c1.display()
+
+
+    
+
+
 
     
 
