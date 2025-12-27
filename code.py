@@ -80,7 +80,7 @@ class Frequency_analysis(text_analysis):
                 cleaned_text+=char
         
         #highest used words in text
-        words=self.text.split()
+        words=cleaned_text.split()
 
 
         for word in words:
