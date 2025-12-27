@@ -74,7 +74,7 @@ class Frequency_analysis(text_analysis):
         
         #highest used words in text
         words=self.text.split()
-        
+
 
         for word in words:
             if  word in self.word_count:
@@ -88,6 +88,21 @@ class Frequency_analysis(text_analysis):
         print("Total words: ",self.statistical_data["word count"])
         print("Total Sentences : ",self.statistical_data["Sentence count "])
         print("Total paragraphs :",self.statistical_data["Paragraph count "])
+
+        print("="*5,"Top 10 Words","="*5)
+        
+        Items=list(self.word_count.items())
+        Items.sort(key= lambda x:x[1], reverse=True)
+
+        count=0
+        for w,f in Items:
+            if count<10:
+                print(f"{w}:{f}")
+                count+=1
+            else:
+                break
+            
+
     
  
 c1=Frequency_analysis()
