@@ -1,12 +1,13 @@
+import matplotlib.pyplot  as plt
 
 class text_analysis:
     def __init__(self):
         self.text=""
         self.statistical_data={}
-        self.word_count={}
+        
 
     def text_input(self):
-        print("-"*15,"Text analysis Application","*"*15)
+        print("-"*15,"Text analysis Application","-"*15)
         print()
         print("Please choose one option :- \nOption A : input as a Text\nOption B : input from a file ")
         choice=input("Enter your choice :-",)
@@ -58,6 +59,7 @@ class text_analysis:
 class Frequency_analysis(text_analysis):
     def __init__(self):
         super().__init__()
+        self.word_count={}
 
     def Frequency_analysis(self):
         #converting text in lower case
@@ -82,6 +84,13 @@ class Frequency_analysis(text_analysis):
             else:
                 self.word_count[word]=1
 
+
+
+class Show_analysis(Frequency_analysis):
+    def __init__(self):
+        super().__init__()
+        self.Items=[]
+
     def display(self):
         print("Total characters : ",self.statistical_data["char_with"])
         print("Total characters (excluding spaces): ",self.statistical_data["char_without"])
@@ -93,6 +102,7 @@ class Frequency_analysis(text_analysis):
         
         Items=list(self.word_count.items())
         Items.sort(key= lambda x:x[1], reverse=True)
+        
 
         count=0
         for w,f in Items:
@@ -101,15 +111,32 @@ class Frequency_analysis(text_analysis):
                 count+=1
             else:
                 break
-            
+
+    def visualisation(self):
+        
+
+        fig=plt.figure()
+
+        qunatity1=["Total Words","Total Sentences ","Total Paragraphs","Unique Words"]
+        quantity2=[self.statistical_data["word count"],self.statistical_data["Sentence count "],self.statistical_data["Paragraph count "],len(self.word_count)]
+
+        plt.bar(qunatity1,quantity2)
+        plt.xlabel("X-Axis",color="Red")
+        plt.ylabel("Y-Axis",color="Red")
+        plt.title("Text Analysis Application")
+        plt.show()
+
+
+
 
     
- 
-c1=Frequency_analysis()
+
+c1=Show_analysis()
 c1.text_input()
 c1.statistics()
 c1.Frequency_analysis()
 c1.display()
+c1.visualisation()
 
 
     
