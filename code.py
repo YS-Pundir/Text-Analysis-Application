@@ -136,7 +136,7 @@ class Show_analysis(Frequency_analysis):
         quantity2=[self.statistical_data["word count"],self.statistical_data["Sentence count "],self.statistical_data["Paragraph count "],len(self.word_count)]
         colors=["Red","Yellow","Green","Brown"]
         
-        plt.bar(qunatity1,quantity2)
+        plt.bar(qunatity1,quantity2,color=colors)
         plt.xlabel("X-Axis",color="Red")
         plt.ylabel("Y-Axis",color="Red")
         plt.title("Text Analysis Application")
