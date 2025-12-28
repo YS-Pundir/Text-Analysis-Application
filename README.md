@@ -40,7 +40,6 @@ This project is implemented in :
 
 ## ▶️ How to Run
 
-```bash
 pip install matplotlib
 python text_analyzer_oop.py
 (Alternatively, run text_analyzer_modular.py for the function-based version.)
