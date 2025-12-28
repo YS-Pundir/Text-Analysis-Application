@@ -51,6 +51,7 @@ python text_analyzer_oop.py
 ```
 
 ## 📊 Sample Output
+```
 yaml
 Copy code
 Total characters (with spaces): 1450
@@ -65,6 +66,7 @@ and: 18
 python: 15
 ...
 A bar chart is generated to visualize key metrics.
+```
 
 ## 💡 Why This Project Matters
 This project showcases:
