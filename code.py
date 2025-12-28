@@ -8,7 +8,7 @@ class text_analysis:
 
     def text_input(self):
         print("-"*15,"Text analysis Application","-"*15)
-        print()
+        
         print("Please choose one option :- \nOption A : input as a Text\nOption B : input from a file ")
         choice=input("Enter your choice :-",)
 
@@ -90,7 +90,7 @@ class Frequency_analysis(text_analysis):
                 cleaned_text+=char
         
         #highest used words in text
-        words=cleaned_text.split()
+        words=self.text.split()
 
 
         for word in words:
@@ -134,7 +134,8 @@ class Show_analysis(Frequency_analysis):
 
         qunatity1=["Total Words","Total Sentences ","Total Paragraphs","Unique Words"]
         quantity2=[self.statistical_data["word count"],self.statistical_data["Sentence count "],self.statistical_data["Paragraph count "],len(self.word_count)]
-
+        colors=["Red","Yellow","Green","Brown"]
+        
         plt.bar(qunatity1,quantity2)
         plt.xlabel("X-Axis",color="Red")
         plt.ylabel("Y-Axis",color="Red")
