@@ -29,7 +29,12 @@ A Python-based command-line application that analyzes text input and produces me
 
 ## 🧩 Design & Implementation
 
-This project is implemented in :
+This project is implemented in two styles:
+
+### Modular Version
+- Function-based architecture
+- Clear separation of concerns
+- Easy to read and test
 
 ### Object-Oriented Version
 - `TextAnalyzer` class encapsulating logic and data
@@ -40,11 +45,12 @@ This project is implemented in :
 
 ## ▶️ How to Run
 
+```
 pip install matplotlib
 python text_analyzer_oop.py
-(Alternatively, run text_analyzer_modular.py for the function-based version.)
+```
 
-📊 Sample Output
+## 📊 Sample Output
 yaml
 Copy code
 Total characters (with spaces): 1450
@@ -60,7 +66,7 @@ python: 15
 ...
 A bar chart is generated to visualize key metrics.
 
-💡 Why This Project Matters
+## 💡 Why This Project Matters
 This project showcases:
 
 Practical text processing in Python
@@ -73,9 +79,9 @@ Data visualization skills
 
 Writing production-quality, readable code
 
-👨‍💻 Author
+## 👨‍💻 Author
 Yuvraj Singh Pundir
 (Software Engineering Student)
 
-📄 License
+## 📄 License
 MIT License
