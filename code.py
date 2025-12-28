@@ -26,14 +26,24 @@ class text_analysis:
             name=input("Enter the name of the file :- ",)
             try:
                 with open(name,"r") as file:
+                    
                     self.text=file.read()
-            except :
-                print("file not found")
-        
+                   
+            except   FileNotFoundError:
+                print("File not found : Please check the file name !")
+                
+                   
         else:
             print("Invalid Choice!!")
             print("PLease Choose the choice again")
             self.text_input()
+
+        if not self.text:
+            print("Text Not Found!")
+            print("Please Provide the text again !!")
+            self.text_input()
+        
+
         
 
     def statistics(self):
@@ -42,7 +52,7 @@ class text_analysis:
         #Adding the data without the spaces to the data
         self.statistical_data["char_without"]=len(self.text.replace(" ",""))
         #total word count 
-        self.statistical_data["word count"]=len(self.text.split(" "))
+        self.statistical_data["word count"]=len(self.text.split())
 
         #counting the paragraphs of the text
         paragraph=self.text.split("\n\n")
@@ -66,12 +76,12 @@ class Frequency_analysis(text_analysis):
         super().__init__()
         self.word_count={}
 
-    def Frequency_analysis(self):
+    def Word_Frequency_analysis(self):
         #converting text in lower case
         self.text=self.text.lower()
         
         #Removing the punctuation
-        punctuation="!@#$%^&*(){}[]:;""<>,.?/|"
+        punctuation="!@#$%^&*(){}[]:;""<>, .?/|"
         cleaned_text=""
             
         for char in self.text:
@@ -132,16 +142,33 @@ class Show_analysis(Frequency_analysis):
         plt.show()
 
 
+def main():
+    while True:
+        c1=Show_analysis()
+        c1.text_input()
+        c1.statistics()
+        c1.Word_Frequency_analysis()
+        c1.display()
+        c1.visualisation()
+        choice2=input("Do you want to analyse another text (y/n):-")
+        if choice2=="y":
+            continue
+        else:
+            print("See you next time")
+            break
+    
+
+
+if __name__=="__main__":
+    main()
+
+
+
+
 
 
     
 
-c1=Show_analysis()
-c1.text_input()
-c1.statistics()
-c1.Frequency_analysis()
-c1.display()
-c1.visualisation()
 
 
     
