@@ -66,7 +66,7 @@ def statistics():
 
 def Word_Frequency_analysis():
         #converting text in lower case
-        text=text.lower()
+        text.lower()
         
         #Removing the punctuation
         punctuation="!@#$%^&*(){}[]:;""<>,.?/|"
@@ -86,4 +86,8 @@ def Word_Frequency_analysis():
                 word_count[word]+=1
             else:
                 word_count[word]=1
+
+text_input()
+statistics()
+Word_Frequency_analysis()
 
