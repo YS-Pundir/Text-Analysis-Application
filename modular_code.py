@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 text=""
 statistical_data={}
-
+word_count={}
 
 def text_input():
         print("-"*15,"Text analysis Application","-"*15)
@@ -64,5 +64,26 @@ def statistics():
                 list2.append(i)
         statistical_data["Sentence count "]=len(list2)
 
-text_input()
-statistics()
+def Word_Frequency_analysis():
+        #converting text in lower case
+        text=text.lower()
+        
+        #Removing the punctuation
+        punctuation="!@#$%^&*(){}[]:;""<>,.?/|"
+        cleaned_text=""
+            
+        for char in text:
+            #checking if there is punctuaation is the given text
+            if char not in punctuation:
+                cleaned_text+=char
+        
+        #highest used words in text
+        words=cleaned_text.split()
+
+
+        for word in words:
+            if  word in word_count:
+                word_count[word]+=1
+            else:
+                word_count[word]=1
+
