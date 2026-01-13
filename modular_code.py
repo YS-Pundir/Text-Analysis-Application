@@ -117,13 +117,13 @@ def display():
                 count+=1
             else:
                 break
-def visualisation(self):
+def visualisation():
     
 
     fig=plt.figure()
 
     qunatity1=["Total Words","Total Sentences ","Total Paragraphs","Unique Words"]
-    quantity2=[self.statistical_data["word count"],self.statistical_data["Sentence count "],self.statistical_data["Paragraph count "],len(self.word_count)]
+    quantity2=[statistical_data["word count"],statistical_data["Sentence count "],statistical_data["Paragraph count "],len(word_count)]
     colors=["Red","Yellow","Green","Brown"]
     
     plt.bar(qunatity1,quantity2,color=colors)
@@ -131,7 +131,15 @@ def visualisation(self):
     plt.ylabel("Y-Axis",color="Red")
     plt.title("Text Analysis Application")
     plt.show()
+
 text=text_input()
 statistical_data=statistics()
 word_count=Word_Frequency_analysis()
-display()
+
+def main():
+    while True:
+        display()
+        visualisation()
+      
+if __name__=="__main__":
+    main()
