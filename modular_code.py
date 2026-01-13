@@ -117,6 +117,20 @@ def display():
                 count+=1
             else:
                 break
+def visualisation(self):
+    
+
+    fig=plt.figure()
+
+    qunatity1=["Total Words","Total Sentences ","Total Paragraphs","Unique Words"]
+    quantity2=[self.statistical_data["word count"],self.statistical_data["Sentence count "],self.statistical_data["Paragraph count "],len(self.word_count)]
+    colors=["Red","Yellow","Green","Brown"]
+    
+    plt.bar(qunatity1,quantity2,color=colors)
+    plt.xlabel("X-Axis",color="Red")
+    plt.ylabel("Y-Axis",color="Red")
+    plt.title("Text Analysis Application")
+    plt.show()
 text=text_input()
 statistical_data=statistics()
 word_count=Word_Frequency_analysis()
