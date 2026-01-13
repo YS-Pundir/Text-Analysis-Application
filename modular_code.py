@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 text=""
 statistical_data={}
 word_count={}
+Items=[]
+
 
 def text_input():
         print("-"*15,"Text analysis Application","-"*15)
@@ -40,6 +42,9 @@ def text_input():
             print("Text Not Found!")
             print("Please Provide the text again !!")
             text_input()
+        return text
+
+
 def statistics():
         #Adding the character with space to the data
         statistical_data["char_with"]=len(text)
@@ -64,6 +69,9 @@ def statistics():
                 list2.append(i)
         statistical_data["Sentence count "]=len(list2)
 
+        return statistical_data
+
+
 def Word_Frequency_analysis():
         #converting text in lower case
         text.lower()
@@ -86,8 +94,30 @@ def Word_Frequency_analysis():
                 word_count[word]+=1
             else:
                 word_count[word]=1
+            
+        return word_count
 
-text_input()
-statistics()
-Word_Frequency_analysis()
+def display():
+        print("Total characters : ",statistical_data["char_with"])
+        print("Total characters (excluding spaces): ",statistical_data["char_without"])
+        print("Total words: ",statistical_data["word count"])
+        print("Total Sentences : ",statistical_data["Sentence count "])
+        print("Total paragraphs :",statistical_data["Paragraph count "])
 
+        print("="*5,"Top 10 Words","="*5)
+        
+        Items=list(word_count.items())
+        Items.sort(key= lambda x:x[1], reverse=True)
+        
+
+        count=0
+        for w,f in Items:
+            if count<10:
+                print(f"{w}:{f}")
+                count+=1
+            else:
+                break
+text=text_input()
+statistical_data=statistics()
+word_count=Word_Frequency_analysis()
+display()
